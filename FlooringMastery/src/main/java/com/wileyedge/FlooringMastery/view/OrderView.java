@@ -74,14 +74,18 @@ public class OrderView {
 	}
 	
 	public void displayUnknownCommand() {
-		// TODO Auto-generated method stub
-		
+	    System.out.println("****************************************");
+	    System.out.println("Unknown command. Please enter a valid command.");
+	    System.out.println("****************************************");
 	}
 
+
 	public void displayExitBanner() {
-		// TODO Auto-generated method stub
-		
+	    System.out.println("****************************************");
+	    System.out.println("Thank you for using the Flooring Mastery program. Goodbye!");
+	    System.out.println("****************************************");
 	}
+
 
 	public BigDecimal promptForArea(BigDecimal min) {
 	    System.out.println("Please enter the area for the order (Minimum order size is 100 sq ft):");
