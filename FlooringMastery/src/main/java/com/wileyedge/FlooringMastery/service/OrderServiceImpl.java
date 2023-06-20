@@ -3,16 +3,19 @@ package com.wileyedge.FlooringMastery.service;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.wileyedge.FlooringMastery.dao.OrderDao;
 import com.wileyedge.FlooringMastery.model.Order;
 
-@Component
+@Service
 public class OrderServiceImpl implements OrderService{
 	
 	private OrderDao dao;
 	
+	@Autowired
 	public OrderServiceImpl(OrderDao dao) {
 		this.dao = dao;
 		readOrdersFromFile();

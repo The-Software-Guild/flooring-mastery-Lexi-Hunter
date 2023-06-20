@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.wileyedge.FlooringMastery.model.Order;
@@ -20,18 +21,14 @@ import com.wileyedge.FlooringMastery.view.UserIO;
 @Controller
 public class OrderControllerImpl implements OrderController{
 
+	@Autowired
 	private OrderView view;
+	@Autowired
 	private OrderService orderService;
+	@Autowired
 	private TaxService taxService;
+	@Autowired
 	private ProductService productService;
-	
-	public OrderControllerImpl(OrderView view, OrderService orderService, TaxService taxService,
-			ProductService productService, UserIO io) {
-        this.view = view;
-        this.orderService = orderService;
-        this.taxService = taxService;
-        this.productService = productService;
-    }
 	
 	@Override
 	public void run() {

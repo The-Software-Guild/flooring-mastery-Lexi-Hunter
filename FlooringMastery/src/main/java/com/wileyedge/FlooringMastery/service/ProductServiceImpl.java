@@ -3,16 +3,19 @@ package com.wileyedge.FlooringMastery.service;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.wileyedge.FlooringMastery.dao.ProductDao;
 import com.wileyedge.FlooringMastery.model.Product;
 
-@Component
+@Service
 public class ProductServiceImpl implements ProductService{
 
 	ProductDao dao;
 	
+	@Autowired
 	public ProductServiceImpl(ProductDao dao) {
 		this.dao = dao;
 		readProductFromFile();

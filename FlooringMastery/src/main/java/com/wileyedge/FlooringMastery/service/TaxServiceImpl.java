@@ -3,16 +3,19 @@ package com.wileyedge.FlooringMastery.service;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.wileyedge.FlooringMastery.dao.TaxDao;
 import com.wileyedge.FlooringMastery.model.Tax;
 
-@Component
+@Service
 public class TaxServiceImpl implements TaxService{
 
 	TaxDao dao;
 	
+	@Autowired
 	public TaxServiceImpl(TaxDao dao) {
 		this.dao = dao;
 		readTaxFromFile();
