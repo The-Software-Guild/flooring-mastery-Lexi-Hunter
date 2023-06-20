@@ -19,10 +19,7 @@ public class TaxDaoImpl implements TaxDao{
 	private final String TAX_FILE = "C:/C353/FlooringMastery/SampleFileData/Data/Taxes.txt";
     private List<Tax> taxes = new ArrayList<>();
     
-    public List<Tax> getTaxRates(){
-    	return taxes;
-    }
-    
+    @Override
     public BigDecimal getTaxRate(String state) {
         for (Tax tax : taxes) {
             if (tax.getStateAbbreviation().equalsIgnoreCase(state)) {
@@ -32,6 +29,7 @@ public class TaxDaoImpl implements TaxDao{
         return null;
     }
     
+    @Override
     public void readTaxFromFile() {
         Path filePath = Paths.get(TAX_FILE);
 
@@ -65,6 +63,7 @@ public class TaxDaoImpl implements TaxDao{
         return tax;
     }
     
+    @Override
     public boolean isValidState(String state) {
         return taxes.stream().anyMatch(t -> t.getStateAbbreviation().equalsIgnoreCase(state));
     }

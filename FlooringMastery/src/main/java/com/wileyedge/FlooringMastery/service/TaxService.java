@@ -6,7 +6,6 @@ import com.wileyedge.FlooringMastery.model.Tax;
 
 public interface TaxService {
     void readTaxFromFile();
-    List<Tax> getTaxRates();
     BigDecimal getTaxRate(String state);
     boolean isValidState(String state);
 }

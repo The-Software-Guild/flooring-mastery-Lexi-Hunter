@@ -18,18 +18,17 @@ public class TaxServiceImpl implements TaxService{
 		readTaxFromFile();
 	}
 	
-	public List<Tax> getTaxRates(){
-		return dao.getTaxRates();
-	}
-	
+	@Override
 	public BigDecimal getTaxRate(String state) {
 		return dao.getTaxRate(state);
 	}
 	
+	@Override
 	public void readTaxFromFile() {
 		dao.readTaxFromFile();
 	}
 	
+	@Override
 	public boolean isValidState(String state) {
 		return dao.isValidState(state);
 	}

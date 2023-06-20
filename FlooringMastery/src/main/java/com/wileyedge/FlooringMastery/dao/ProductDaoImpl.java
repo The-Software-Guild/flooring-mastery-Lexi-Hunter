@@ -15,10 +15,12 @@ import com.wileyedge.FlooringMastery.model.Product;
 public class ProductDaoImpl implements ProductDao{
 	List<Product> products = new ArrayList<>();
 	
+	@Override
 	public List<Product> getProducts(){
 		return products;
 	}
 	
+	@Override
 	public BigDecimal getCostPerSquareFoot(String productType) {
         for (Product product : products) {
             if (product.getProductType().equalsIgnoreCase(productType)) {
@@ -28,6 +30,7 @@ public class ProductDaoImpl implements ProductDao{
         return null;
     }
 	
+	@Override
 	public BigDecimal getlabourCostPerSquareFoot(String productType) {
         for (Product product : products) {
             if (product.getProductType().equalsIgnoreCase(productType)) {
@@ -37,6 +40,7 @@ public class ProductDaoImpl implements ProductDao{
         return null;
     }
 	
+	@Override
 	public void readProductFromFile() {
 	    // Create the file path
 	    String filePath = "C:/C353/FlooringMastery/SampleFileData/Data/Products.txt";

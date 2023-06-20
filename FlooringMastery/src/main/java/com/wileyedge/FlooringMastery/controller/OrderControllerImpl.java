@@ -33,6 +33,7 @@ public class OrderControllerImpl implements OrderController{
         this.productService = productService;
     }
 	
+	@Override
 	public void run() {
 		
 		boolean keepGoing = true;
@@ -69,12 +70,14 @@ public class OrderControllerImpl implements OrderController{
             
 	}
 	
+	@Override
 	public void displayOrders() {
 		LocalDate date = view.promptForDate();
 		List<Order> selectedOrders = orderService.getOrdersByDate(date);
 		view.displayOrders(selectedOrders);
     }
 
+	@Override
 	public void addOrder() {
 		
 		LocalDate orderDate = view.promptForFutureDate();
@@ -124,10 +127,9 @@ public class OrderControllerImpl implements OrderController{
 	        System.out.println("Order was not added. Returning to the main menu.");
 	    }
 	    
-	    view.displayOrders(orderService.getAllOrders());
-	    
     }
 
+	@Override
 	public void editOrder() {
 
 	    LocalDate date = view.promptForDate();
@@ -205,7 +207,7 @@ public class OrderControllerImpl implements OrderController{
 	    }
 	}
 
-
+	@Override
 	public void removeOrder() {
 	    // Ask the user for the date and order number
 	    LocalDate date = view.promptForDate();
@@ -233,7 +235,7 @@ public class OrderControllerImpl implements OrderController{
 	    }
 	}
 
-
+	@Override
 	public void exportAllData() {
 	    List<Order> allOrders = orderService.getAllOrders();
 
@@ -267,11 +269,12 @@ public class OrderControllerImpl implements OrderController{
 	    }
 	}
 
-
+	@Override
     public void unknownCommand() {
         view.displayUnknownCommand();
     }
 
+	@Override
     public void exitMessage() {
         view.displayExitBanner();
     }

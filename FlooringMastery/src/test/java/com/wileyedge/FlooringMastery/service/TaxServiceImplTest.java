@@ -19,16 +19,6 @@ public class TaxServiceImplTest {
         taxDao = new TaxDaoImpl();
         taxService = new TaxServiceImpl(taxDao);
     }
-
-    @Test
-    @DisplayName("getTaxRates method test")
-    public void testGetTaxRates() {
-        System.out.println("Inside testGetTaxRates of TaxServiceImplTest");
-
-        int actualResult = taxService.getTaxRates().size();
-        int expectedResult = 4;
-        assertEquals(expectedResult, actualResult, "The total number of tax rates should be 4.");
-    }
     
     @Test
     @DisplayName("getTaxRate method test")
